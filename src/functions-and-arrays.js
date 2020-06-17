@@ -10,6 +10,29 @@ console.log(largest);
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+function findLongestWord(words) {
+  if (words.length < 1) return null; // empty array
+
+  var longestWord = ""; // init our longestWord with an empty string
+
+  //
+  // loop through all words, and check if one beats `longestWord`
+  //
+  for (var i = 0; i < words.length; i++) {
+    let word = words[i]; // the current word of our loop
+
+    // if current word beats `longestWord`
+    if (word.length > longestWord.length) {
+      longestWord = word; // this is our new longestWord !
+    }
+  }
+
+  return longestWord;
+}
+
+var longest = findLongestWord(words);
+console.log(longest);
+
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
