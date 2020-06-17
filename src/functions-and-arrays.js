@@ -86,8 +86,43 @@ function sum(array) {
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+function averageNumbers(array) {
+  if (array.length < 1) return null; // in case of empty array
+
+  // reuse our previous `sumNumbers` function
+  return sumNumbers(array) / array.length;
+}
+
+var average = averageNumbers(numbersAvg);
+console.log(average);
+
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength(words) {
+  if (words.length < 1) return null; // in case of empty array
+
+  var sumLetters = 0;
+
+  // loop through `words` and sum each word's length
+  for (var i = 0; i < words.length; i++) {
+    sumLetters += words[i].length;
+  }
+
+  // average
+  return sumLetters / words.length;
+}
+
+var averageLength = averageWordLength(wordsForAverage);
+console.log(averageLength);
+
+// Iteration #4.1: generic avg function
+
+function avg(array) {
+  if (array.length < 1) return null;
+
+  return sum(array)/array.length
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
