@@ -37,6 +37,51 @@ console.log(longest);
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumNumbers(array) {
+  var sum = 0; // our accumulator where we will sum every numbers of `array`
+
+  // loop through all our numbers and sum them into `sum`
+  for (var x = 0; x < array.length; x++) {
+    sum += array[x];
+  }
+
+  return sum;
+}
+
+var total = sumNumbers(numbers);
+console.log(total);
+
+// Iteration #3.1: Generic sum
+
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+function sum(array) {
+  var sum = 0; // our accumulator where we will sum every numbers of `array`
+
+  array.forEach(function (el) {
+    switch (typeof el) {
+      case 'number':
+        sum += el;
+        break;
+      case 'string':
+        sum += el.length;
+        break;
+      case 'boolean':
+        if (el === true) {
+          sum += 1;
+        } else {
+          sum += 0;
+        }
+        break;
+      default:
+        throw new Error("Unsupported data type sir or ma'am");
+        break;
+    }
+  })
+
+  return sum;
+}
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
